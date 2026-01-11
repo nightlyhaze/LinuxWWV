@@ -7,6 +7,7 @@ This is my first actual project here on Github, and it is a fork of @rgrokett's 
 
 ACCURACY:
 The Pi's clock is set to the RTC so is as accurate as the RTC module. (Typically, +-1 second or so per day). For more accuracy, have the device actively synced to an NTP server. Additionally, the player itself may introduce some latency; this is why its first line after the #define lines has a compensation constant you can adjust as necessary. This also serves as the millisecond integer for the sleep() function that was in the original Python code.
+
 `constexpr int AUDIO_LATENCY_MS = <number in milliseconds>;`
 
 Moreover, depending on the system load, the program may lag (or even malfunction) if you use your Linux machine aside from this program, so it's best to use this as some sort of "idle mode music", or, as the original program intends to, play this on a small single-board computer (SBC) such as a Raspberry Pi Zero or the likes of it.
